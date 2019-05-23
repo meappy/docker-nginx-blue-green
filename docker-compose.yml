@@ -1,0 +1,21 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:alpine-perl
+    container_name: nginx
+    ports:
+      - '80:80'
+    volumes:
+      - ${NGINX_LOG_DIR:-./logs/nginx}:/var/log/nginx
+      - ${NGINX_UPSTREAM_DIR:-./nginx/assets/upstream}:/etc/nginx/upstream
+      - ${NGINX_CONF_FILE:-./nginx/assets/nginx.conf}:/etc/nginx/nginx.conf
+      - ${NGINX_CONF_VHOST_DIR:-./nginx/assets/conf.d}:/etc/nginx/conf.d
+    restart: always
+
+  apache:
+    depends_on:
+      - nginx
+    image: httpd:alpine
+    ports:
+      - "81:80"
+    restart: always
