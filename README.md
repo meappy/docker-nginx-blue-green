@@ -3,7 +3,7 @@ Proof of concept for blue green proxy with nginx + ngx_http_perl_module
 
 ## Objectives
 1. Start up nginx + Apache containers 
-2. Modify upstream.txt for blue or green redirection
+2. Setup config.ini and deploy blue or green upstream
 3. Test
 
 ## Start up nginx + Apache containers
@@ -11,8 +11,10 @@ Proof of concept for blue green proxy with nginx + ngx_http_perl_module
 docker-compose up -d 
 ```
 
-## Modify upstream.txt for blue or green redirection
+## Setup config.ini and deploy blue or green upstream
 ```
+# mv config.ini.sample config.ini
+
 # ./deploy.py -d blue 
 Current deploy status: blue:8081
 ```
