@@ -13,7 +13,8 @@ docker-compose up -d
 
 ## Modify upstream.txt for blue or green redirection
 ```
-echo 'apache' > nginx/assets/upstream/upstream.txt 
+# ./deploy.py -d blue 
+Current deploy status: blue:8081
 ```
 
 ## Test

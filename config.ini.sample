@@ -1,0 +1,6 @@
+[config]
+upstream = nginx/assets/upstream/upstream.txt
+
+[deploy]
+blue = blue:8081
+green = green:8082
