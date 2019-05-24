@@ -1,13 +1,10 @@
 #!/bin/bash
 set -e
-expected="Hello World"
-actual=`nc -v localhost 5000`
-echo "Expecting: $expected"
-echo "Server says: $actual"
-if [ "$expected" != "$actual" ]; then
-  echo "Test failed"
-  exit 1
-else
+EXPECTED="It works!"
+if [[ $(curl -s -H 'Host: poc' 127.0.0.1 | grep "${EXPECTED}") ]]; then
   echo "Test passed"
   exit 0
+else
+  echo "Test failed"
+  exit 1
 fi
