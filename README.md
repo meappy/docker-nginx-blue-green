@@ -1,5 +1,5 @@
 # Docker blue green for nginx with ngx_http_perl_module
-[![Join the chat at https://gitter.im/docker-nginx-blue-green](https://badges.gitter.im/docker-nginx-blue-green.svg)](https://gitter.im/docker-nginx-blue-green) [![Coverage Status](https://coveralls.io/repos/github/meappy/docker-nginx-blue-green/badge.svg?branch=master)](https://coveralls.io/github/meappy/docker-nginx-blue-green?branch=master)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/meappy/docker-nginx-blue-green/graphs/commit-activity) [![Join the chat at https://gitter.im/docker-nginx-blue-green](https://badges.gitter.im/docker-nginx-blue-green.svg)](https://gitter.im/docker-nginx-blue-green) [![Coverage Status](https://coveralls.io/repos/github/meappy/docker-nginx-blue-green/badge.svg?branch=master)](https://coveralls.io/github/meappy/docker-nginx-blue-green?branch=master)
 
 Proof of concept for blue green proxy with nginx + ngx_http_perl_module
 
