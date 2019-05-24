@@ -1,4 +1,6 @@
 # Docker blue green for nginx with ngx_http_perl_module
+[![Join the chat at https://gitter.im/docker-nginx-blue-green](https://badges.gitter.im/docker-nginx-blue-green.svg)](https://gitter.im/docker-nginx-blue-green)
+
 Proof of concept for blue green proxy with nginx + ngx_http_perl_module
 
 ## Objectives
