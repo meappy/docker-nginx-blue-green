@@ -1,4 +1,20 @@
+env:
+  DOCKER_COMPOSE_VERSION: 3.0
+
+
+
 sudo: true
+language: python
+dist: bionic
+env:
+  EXCELCY_TEMP_PATH=${TRAVIS_BUILD_DIR}
+python:
+  - 3.7
+
+
+before_install:
+
+
 language: python
 python:
   - 3.6
