@@ -21,6 +21,9 @@ Current deploy status: blue:8081
 
 ## Test
 ```
+# ./deploy.py -p 
+Current deploy status: blue:8081
+
 # curl -H 'Host: poc' -k -iL http://127.0.0.1
 HTTP/1.1 200 OK
 Server: nginx/1.15.12
