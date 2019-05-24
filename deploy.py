@@ -38,8 +38,8 @@ def deploy_bg(args):
         upstream.write(config.get('deploy', args))
 
 def print_deploy_status():
-    with open(upstream_file) as f:
-        upstream = f.readline()
+    with open(upstream_file) as upstream:
+        upstream = upstream.readline()
 
     if args.quiet:
         pass
