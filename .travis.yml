@@ -1,23 +1,17 @@
-env:
-  DOCKER_COMPOSE_VERSION: 3.0
-
-
-
 sudo: true
 language: python
-dist: bionic
+dist: xenial
 env:
-  EXCELCY_TEMP_PATH=${TRAVIS_BUILD_DIR}
+  - DOCKER_COMPOSE_VERSION=1.24.0
 python:
   - 3.7
-
-
 before_install:
-
-
-language: python
-python:
-  - 3.6
-  - 3.7
-services:
-  - docker
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" /usr/local/bin/docker-compose
+  - sudo chmod +x /usr/local/bin/docker-compose
+before_script:
+  - docker-compose up -d
+script:
+  - ./docker-test.sh
+after_script:
+  - docker-compose down
