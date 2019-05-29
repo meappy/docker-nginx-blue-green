@@ -6,7 +6,6 @@ EXPECTED="It works!"
 
 cp -f config.ini.sample config.ini
 sed -i 's/blue:8081/apache/' config.ini
-ls -ld config.ini
 python deploy.py -d blue
 
 if [[ $(curl -s -H 'Host: poc' 127.0.0.1 | grep "${EXPECTED}") ]]; then
