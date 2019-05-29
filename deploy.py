@@ -46,7 +46,7 @@ config_file = args.config
 config_file_exists = os.path.isfile(config_file)
 
 if not config_file_exists:
-    print{'Config file not found or not defined, see -h for help')
+    print('Config file not found or not defined, see -h for help')
     quit()
 
 # Parse config_file
@@ -65,7 +65,7 @@ def print_deploy_status():
     if args.quiet:
         pass
     else:
-        print 'Current deploy status: %s' % (upstream).rstrip()
+        print('Current deploy status: %s' % (upstream).rstrip())
 
 if args.deploy:
     deploy_bg(args.deploy)
