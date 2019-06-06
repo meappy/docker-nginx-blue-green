@@ -8,6 +8,7 @@ services:
     volumes:
       - ${NGINX_LOG_DIR:-./logs/nginx}:/var/log/nginx
       - ${NGINX_UPSTREAM_DIR:-./nginx/assets/upstream}:/etc/nginx/upstream
+      - ${NGINX_PERL_LIB_DIR:-./nginx/assets/perl}:/etc/nginx/perl
       - ${NGINX_CONF_FILE:-./nginx/assets/nginx.conf}:/etc/nginx/nginx.conf
       - ${NGINX_CONF_VHOST_DIR:-./nginx/assets/conf.d}:/etc/nginx/conf.d
     restart: always
