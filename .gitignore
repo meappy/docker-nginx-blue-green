@@ -1,3 +1,4 @@
 .trash
 config.ini
 *.log
+.env

@@ -3,25 +3,61 @@
 
 Proof of concept for blue green proxy with nginx + ngx_http_perl_module
 
-## Objectives
+## Docker run
+This method pulls the latest image from Docker Hub. Ready for use as a proxy, quick and dirty set up below
+
+### Objectives
+1. Set up environment file and docker run
+2. Print current endpoint
+2. Switch endpoint
+4. Clean up container
+
+### Set up environment file and docker run
+```
+# cp .env.sample .env
+# docker run -p 80:80 -d --name nginx --env-file ./.env meappy/nginx-blue-green
+```
+
+### Print current endpoint
+```
+# docker exec -it nginx /deploy.py -p
+Current deploy status: apache:80
+```
+
+### Switch endpoint
+```
+# docker exec -it nginx /deploy.py -d green
+Current deploy status: apache:81
+```
+
+### Clean up container
+```
+# docker stop nginx
+# docker rm nginx
+```
+
+## Docker Compose method
+This method pulls the an nginx image from Docker Hub
+ 
+### Objectives
 1. Start up nginx + Apache containers 
 2. Setup config.ini and deploy blue or green upstream
 3. Test
 
-## Start up nginx + Apache containers
+### Start up nginx + Apache containers
 ```
 docker-compose up -d 
 ```
 
-## Setup config.ini and deploy blue or green upstream
+### Setup config.ini and deploy blue or green upstream
 ```
-# mv config.ini.sample config.ini
+# cp config.ini.sample config.ini
 
 # ./deploy.py -d blue 
 Current deploy status: blue:8081
 ```
 
-## Test
+### Test
 ```
 # ./deploy.py -p 
 Current deploy status: blue:8081
