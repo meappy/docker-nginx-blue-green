@@ -35,7 +35,8 @@ Current deploy status: apache:81
 # docker stop nginx
 # docker rm nginx
 ```
-
+  
+  
 ## Docker Compose method
 This method pulls the an nginx image from Docker Hub
  
