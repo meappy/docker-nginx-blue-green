@@ -7,7 +7,7 @@ ARG NGINX_CONF_FILE
 
 # Install python
 RUN apk add --update \
-    python
+    python openssl
 
 # Copy nginx files
 COPY ${NGINX_UPSTREAM_DIR:-./nginx/assets/upstream} /etc/nginx/upstream

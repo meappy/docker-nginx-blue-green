@@ -7,6 +7,8 @@ services:
     ports:
       - '80:80'
     environment:
+      - AUTH_USERNAME=${AUTH_USERNAME:-admin}
+      - AUTH_PASSWORD=${AUTH_PASSWORD:-MzlmaE1KS2RKKzByV0l2TDVNeS9ML2NU}
       - BLUE_ENDPOINT=${BLUE_ENDPOINT:-apache:80}
       - GREEN_ENDPOINT=${GREEN_ENDPOINT:-apache:81}
       - ACTIVE_ENDPOINT=${ACTIVE_ENDPOINT:-blue}
