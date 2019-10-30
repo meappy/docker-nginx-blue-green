@@ -1,3 +1,4 @@
+*.swp
 .trash
 config.ini
 *.log
