@@ -1,0 +1,22 @@
+version: "3"
+services:
+  nginx:
+    build:
+      context: .
+    container_name: nginx
+    ports:
+      - '80:80'
+    environment:
+      - BLUE_ENDPOINT=${BLUE_ENDPOINT:-apache:80}
+      - GREEN_ENDPOINT=${GREEN_ENDPOINT:-apache:81}
+      - ACTIVE_ENDPOINT=${ACTIVE_ENDPOINT:-blue}
+      - UPSTREAM_FILE=${UPSTREAM_FILE:-/etc/nginx/upstream/upstream.txt}
+    restart: always
+
+  apache:
+    depends_on:
+      - nginx
+    image: httpd:alpine
+    ports:
+      - "81:80"
+    restart: always
