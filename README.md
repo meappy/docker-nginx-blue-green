@@ -4,7 +4,7 @@
 Proof of concept for blue-green upstream proxy with nginx + ngx_http_perl_module.
 
 ## Docker run
-This method pulls the latest image from Docker Hub. Ready for use as a proxy, quick and dirty set up below:
+This method pulls the latest image from Docker Hub. Ready for use as a stateless container proxy for use on container platforms like ECS, EKS
 
 ### Objectives
 1. Set up environment file and docker run
@@ -37,8 +37,8 @@ Current deploy status: apache:81
 ```
 &nbsp;  
 ## Docker Compose method
-This method pulls the an nginx image from Docker Hub
- 
+This method pulls an nginx image from Docker Hub. Docker volume is used with deploy script. Good for use as stateful setup where persistent storage is used.
+
 ### Objectives
 1. Start up nginx + Apache containers 
 2. Setup config.ini and deploy blue or green upstream
