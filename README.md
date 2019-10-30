@@ -1,30 +1,30 @@
-# Docker blue green for nginx with ngx_http_perl_module
+# Docker blue green upstreams for nginx with ngx_http_perl_module
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/meappy/docker-nginx-blue-green/graphs/commit-activity) [![Join the chat at https://gitter.im/docker-nginx-blue-green](https://badges.gitter.im/docker-nginx-blue-green.svg)](https://gitter.im/docker-nginx-blue-green) [![Build Status](https://travis-ci.org/meappy/docker-nginx-blue-green.svg?branch=master)](https://travis-ci.org/meappy/docker-nginx-blue-green)
 
-Proof of concept for blue green proxy with nginx + ngx_http_perl_module
+Proof of concept for blue-green upstream proxy with nginx + ngx_http_perl_module.
 
 ## Docker run
-This method pulls the latest image from Docker Hub. Ready for use as a proxy, quick and dirty set up below
+This method pulls the latest image from Docker Hub. Ready for use as a proxy, quick and dirty set up below:
 
 ### Objectives
 1. Set up environment file and docker run
-2. Print current endpoint
-2. Switch endpoint
+2. Print current upstream
+2. Switch upstream
 4. Clean up container
 
-### Set up environment file and docker run
+### Copy sample environment file, modify values to suit, and docker run
 ```
 # cp .env.sample .env
 # docker run -p 80:80 -d --name nginx --env-file ./.env meappy/nginx-blue-green
 ```
 
-### Print current endpoint
+### Print current upstream
 ```
 # docker exec -it nginx /deploy.py -p
 Current deploy status: apache:80
 ```
 
-### Switch endpoint
+### Switch upstream
 ```
 # docker exec -it nginx /deploy.py -d green
 Current deploy status: apache:81
