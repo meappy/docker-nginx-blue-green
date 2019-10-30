@@ -4,7 +4,6 @@ FROM nginx:alpine-perl
 ARG NGINX_UPSTREAM_DIR
 ARG NGINX_PERL_LIB_DIR
 ARG NGINX_CONF_FILE
-ARG NGINX_CONF_VHOST_DIR
 
 # Install python
 RUN apk add --update \
