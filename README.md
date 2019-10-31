@@ -12,7 +12,7 @@ This method pulls the latest image from Docker Hub. Ready for use as a stateless
 2. Switch upstream
 4. Clean up container
 
-### Copy sample environment file, modify values to suit, and docker run
+### Copy [sample environment file](https://bit.ly/2WuaNFB), modify values to suit, and docker run
 ```
 # cp .env.sample .env
 # docker run -p 80:80 -d --name nginx --env-file ./.env meappy/nginx-blue-green
