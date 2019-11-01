@@ -27,7 +27,7 @@ RUN { \
     echo "    set \$upstream \${nginx_proxy_pass_upstream};"; \
     echo "    proxy_set_header Host \$host;"; \
     echo "    proxy_set_header X-Real-IP \$remote_addr;"; \
-    echo "    proxy_pass http://\$upstream\$request_uri;"; \
+    echo "    proxy_pass \$upstream\$request_uri;"; \
     echo "    client_max_body_size 256m;"; \
     echo "    proxy_read_timeout 300s;"; \
     echo "  }"; \
