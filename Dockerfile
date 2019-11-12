@@ -23,7 +23,6 @@ RUN { \
     echo "  server_name _;"; \
     echo ""; \
     echo "  location ~ / {"; \
-    echo "    resolver 127.0.0.11 ipv6=off;"; \
     echo "    set \$upstream \${nginx_proxy_pass_upstream};"; \
     echo "    proxy_set_header Host \$host;"; \
     echo "    proxy_set_header X-Real-IP \$remote_addr;"; \
